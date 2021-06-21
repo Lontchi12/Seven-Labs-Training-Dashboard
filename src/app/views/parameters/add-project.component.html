@@ -1,0 +1,55 @@
+
+<div class="app-body">
+    <main class="main ml-3 d-flex align-items-center">
+      <div class="container ">
+        <div class="row mr-3 ">
+          <div class="col-md-12   ">
+            <div class="card mx-4 " >
+              <div class="card-body p-4">
+                <form (ngSubmit)="onSubmit()" >
+                  <h1>Add Project</h1>
+                  
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="icon-user"></i></span>
+                    </div>
+                    <input type="text" name="title" [(ngModel)]="title" class="form-control" placeholder="Project Title" autocomplete="lab title" required>
+                  </div>
+                  
+                  <div class="mt-4">
+                    <quill-editor class="content-editor" [modules]="quillConfiguration" [placeholder]="'Project Description'"  > </quill-editor>
+                  </div>
+
+                  <div class="mt-4">
+                    <quill-editor class="content-editor" [modules]="quillConfiguration" [placeholder]="'Project Solution'"> </quill-editor>
+                  </div>
+                  
+
+                  <!-- <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">@</span>
+                    </div>
+                    
+                    <textarea class=" form-control z-depth-1"  id="" cols="46" rows="10" placeholder="Project Description" required  ></textarea>
+                  </div> -->
+
+
+                 
+                  
+                  
+                  
+                </form>
+              </div>
+              <div class="card-footer p-4">
+                <div class="row">
+                    <button type="button" class="btn btn-block btn-success">Add Project</button>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  

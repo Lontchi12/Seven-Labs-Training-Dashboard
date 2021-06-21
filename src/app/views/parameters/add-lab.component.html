@@ -1,0 +1,40 @@
+<div class="app-body">
+    <main class="align-items-center">
+      <div class="container">
+        <div class="row ml-4">
+          <div class="col-md-12   ">
+            <div class="card mx-4 " >
+              <div class="card-body p-4">
+                <!-- <form (ngSubmit)="onSubmit()" > -->
+                  <h1>Add Lab</h1>
+                  
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="icon-user"></i></span>
+                    </div>
+                    <input type="text" name="title" [(ngModel)]= "lab.title" ngModel class="form-control" placeholder="Lab Title" autocomplete="lab title" required>
+                  </div>
+                  <!-- <div class="input-group mb-3 "> -->
+                    
+                    
+
+                    <quill-editor class="content-editor" [modules]="quillConfiguration" [(ngModel)]="lab.description" ngModel [placeholder]="'Lab Description'"> </quill-editor>
+                  <!-- </div> -->
+  
+                  
+                <!-- </form> -->
+              </div>
+              <div class="card-footer p-4">
+                <div class="row">
+                    <button type="button" class="btn btn-block btn-success"(click)= "save()" >Add Lab</button>
+                  
+                </div>
+                <!--<div [innerHtml]="sampleRichText"></div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  

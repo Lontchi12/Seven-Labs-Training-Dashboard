@@ -1,0 +1,35 @@
+<section class="signup-container">
+    <div class="logo-box">
+        <p class="logo"><a href="#" routerLink="/">Seven Labs</a></p>
+    </div>
+    <div class="signup-form-container">
+        <p class="signup-form-heading">Create an account</p>
+        <form action="" class="signup-form">
+            <div class="form-group">
+                <input type="text" [(ngModel)]="userObj.username" class="pb-3" placeholder="Type your username" name="username" />
+            </div>
+            <div class="form-group">
+                <input type="password" [(ngModel)]="userObj.password" class="pb-3" placeholder="Type your password" name="password" />
+            </div>
+            <!-- recaptcha -->
+            <!-- <div class="form-group">
+                <div class="g-recaptcha" ng-model="g-recaptcha-response" data-sitekey="6LeTjzQbAAAAAKRSAOVz2Dqe_yz_0cMRahRgsX_2"></div>
+            </div> -->
+
+            <!-- <re-captcha [(ngModel)]="formModel.captcha" name="captcha" required siteKey="6LeTjzQbAAAAAKRSAOVz2Dqe_yz_0cMRahRgsX_2"></re-captcha> -->
+
+            <div class="form-group">
+                <input type="submit" (click)="addUser()" class="signup-form-btn pb-3" value="Register" />
+            </div>
+            <div class="forgot-password-and-signup-links-div ">
+                <p><a routerLink="/login">Already have an account? Login</a></p>
+            </div>
+        </form>
+        <div class="terms-and-conditions-links ">
+            <p>
+                By clicking <span>"Register"</span> you create account and agree to our
+                <a href="">Terms and Conditions</a> and <a href="">Privacy Policy</a>.
+            </p>
+        </div>
+    </div>
+</section>

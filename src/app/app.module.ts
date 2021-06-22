@@ -58,6 +58,10 @@ import { ChartsModule } from 'ng2-charts';
 // import { LabsComponent } from './views/labs-container/labs/labs.component';
 //import { LabContentComponent } from './views/lab-content/lab-content.component'
 import { LabContentRoutingModule } from './views/lab-content/lab-content-routing.module';
+import { FooterComponent } from './frontend/footer/footer.component';
+import { HeroComponent } from './frontend/hero/hero.component';
+import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './frontend/navbar/navbar.component';
 
 
 
@@ -99,6 +103,10 @@ import { LabContentRoutingModule } from './views/lab-content/lab-content-routing
     LoginComponent,
     RegisterComponent,
     LabsComponent,
+    FooterComponent,
+    HeroComponent,
+    HomeComponent,
+    NavbarComponent,
    
     
     

@@ -1,0 +1,22 @@
+.ico {
+    width: 30px;
+    color: black;
+    font-size: 20px;
+}
+
+.loginButton {
+    border: 2px solid rgb(65, 195, 158);
+}
+
+.loginButton:hover {
+    background-color: rgb(65, 195, 158);
+    color: white;
+    text-decoration: none;
+}
+.navbar-brand{
+    display: flex;
+    align-items: center;
+}
+.button{
+    text-decoration: none;
+}

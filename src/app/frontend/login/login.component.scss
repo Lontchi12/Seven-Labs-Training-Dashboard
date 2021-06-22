@@ -1,0 +1,139 @@
+.login-container {
+    width: 100%;
+    // background-color: white;
+    font-family: 'Mukta', sans-serif;
+    height: auto;
+    max-height: 100vh;
+}
+
+.login-container .logo-box {
+    width: 90%;
+    margin: 2rem auto;
+}
+
+.logo-box a {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #03ae9e;
+}
+
+.login-form-container {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.login-form-heading {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.login-form-container .login-form {
+    width: 100%;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 14px 20px !important;
+    border: 1px solid #000;
+    border-radius: 8px;
+    background: transparent;
+}
+
+::placeholder {
+    font-weight: 200;
+}
+
+.login-form .form-group .login-form-btn {
+    border: 1px solid rgb(0, 171, 159);
+    background-color: #03ae9e;
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.forgot-password-and-signup-links-div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.forgot-password-and-signup-links-div a {
+    color: #686868;
+}
+
+.third-party-signin-options-container {
+    width: 40%;
+    margin: 0 auto;
+    position: relative;
+    left: 1rem;
+    align-items: center;
+}
+
+.third-party-signin-options-container .row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.third-party-signin-options-container .row .third-party-signin-item {
+    width: 49%;
+    height: 3rem;
+    border: 1px solid #000;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.third-party-signin-item img {
+    width: 20%;
+    object-fit: contain;
+    /* transform: scale(.3); */
+    height: 60%;
+}
+
+.third-party-signin-item p {
+    width: 60%;
+    height: 20%;
+    font-weight: 500;
+    margin-right: 10%;
+}
+
+.third-party-signin-item p a {
+    color: #000;
+}
+
+.signup-page-link {
+    display: none;
+}
+
+@media only screen and (min-width: 280px) and (max-width: 900px) {
+    .login-form-container {
+        width: 90%;
+    }
+    .third-party-signin-options-container {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .third-party-signin-options-container .row {
+        flex-direction: column;
+        margin-bottom: 0;
+        position: relative;
+        left: .2rem;
+    }
+    .third-party-signin-options-container .row .third-party-signin-item {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .third-party-signin-item p {
+        width: 70%;
+        justify-self: flex-start;
+    }
+    .signup-page-link {
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+    }
+}

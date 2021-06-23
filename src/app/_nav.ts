@@ -13,7 +13,7 @@ export const navItems: INavData[] = [
   },
   {
     name: 'Labs',
-    url: '/labs',
+    url: '',
     icon: 'icon-star'
   },
   {
@@ -45,7 +45,7 @@ export const navItems: INavData[] = [
     children: [
       {
         name: 'CoreUI Icons',
-        url: '/icons/coreui-icons',
+        url: '',
         icon: 'icon-star',
         badge: {
           variant: 'success',
@@ -54,12 +54,12 @@ export const navItems: INavData[] = [
       },
       {
         name: 'Flags',
-        url: '/icons/flags',
+        url: '',
         icon: 'icon-star'
       },
       {
         name: 'Font Awesome',
-        url: '/icons/font-awesome',
+        url: '',
         icon: 'icon-star',
         badge: {
           variant: 'secondary',
@@ -68,7 +68,7 @@ export const navItems: INavData[] = [
       },
       {
         name: 'Simple Line Icons',
-        url: '/icons/simple-line-icons',
+        url: '',
         icon: 'icon-star'
       }
     ]
@@ -80,17 +80,17 @@ export const navItems: INavData[] = [
     children: [
       {
         name: 'Alerts',
-        url: '/notifications/alerts',
+        url: '',
         icon: 'icon-bell'
       },
       {
         name: 'Badges',
-        url: '/notifications/badges',
+        url: '',
         icon: 'icon-bell'
       },
       {
         name: 'Modals',
-        url: '/notifications/modals',
+        url: '',
         icon: 'icon-bell'
       }
     ]
@@ -110,12 +110,12 @@ export const navItems: INavData[] = [
     children: [
       {
         name: 'Login',
-        url: '/login',
+        url: '',
         icon: 'icon-star'
       },
       {
         name: 'Register',
-        url: '/register',
+        url: '',
         icon: 'icon-star'
       },
       {

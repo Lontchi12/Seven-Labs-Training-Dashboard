@@ -1,8 +1,7 @@
 
 
 import { AddLabComponent } from './views/parameters/add-lab.component';
-// import { LabsComponent } from './views/labs/labs.component';
-// import { LabsComponent } from './views/labs-container/labs/labs.component';
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -60,6 +59,7 @@ export const routes: Routes = [
   },
   
   
+  // Lap component layout Parent route that links the lab content component and the lab details component
   {
     path: '',
     component: LabsComponent,
@@ -77,6 +77,8 @@ export const routes: Routes = [
       }
     ]
   },
+
+  // Default layout component that links to the dashboard component and the parameters module
   {
     path: '',
     component: DefaultLayoutComponent,

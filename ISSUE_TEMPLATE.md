@@ -1,8 +1,8 @@
 Before opening an issue:
 
-- [Search for duplicate or closed issues](https://github.com/coreui/coreui-free-angular-admin-template/issues?utf8=%E2%9C%93&q=is%3Aissue)
-- Prepare a [reduced test case](https://css-tricks.com/reduced-test-cases/) for any bugs
-- Read the [contributing guidelines](https://github.com/coreui/coreui-free-angular-admin-template/blob/master/CONTRIBUTING.md)
+- Search for duplicate or closed issues
+- Prepare a reduced test case
+- Read the contributing guidelines
 
 When asking general "how to" questions:
 

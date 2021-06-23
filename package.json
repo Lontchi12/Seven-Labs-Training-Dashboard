@@ -1,21 +1,22 @@
 {
-  "name": "@coreui/coreui-free-angular-admin-template",
+  
+  "name": "seven-labs-training",
   "version": "2.11.2",
-  "description": "CoreUI Free Angular 11 Admin Template",
+  "description": "Seven Labs Training frontend",
   "author": {
-    "name": "Łukasz Holeczek",
-    "url": "http://holeczek.pl",
-    "github": "https://github.com/mrholek",
-    "twitter": "https://twitter.com/lukaszholeczek"
+    "name": "Seven GPS",
+    "url": "",
+    "github": "",
+    "twitter": ""
   },
   "contributors": [
     {
-      "name": "Andrzej Kopański",
-      "url": "https://github.com/xidedix"
+      "name": "",
+      "url": ""
     }
   ],
-  "homepage": "https://coreui.io/angular",
-  "copyright": "Copyright 2021 creativeLabs Łukasz Holeczek",
+  "homepage": "",
+  "copyright": "Copyright 2021 ",
   "license": "MIT",
   "scripts": {
     "ng": "ng",

@@ -26,6 +26,7 @@ export class LabsService {
     console.log(result)
     return result;
   }
+  
 
 
   /** GET Labs by id  */
@@ -58,28 +59,6 @@ export class LabsService {
     }
     return of({});
   }
-
-  // deleteArticle(id: any): Observable<Article> {
-  //   const url = `${apiUrl}/${id}`;
-  //   return this.http.delete<Article>(url, httpOptions).pipe(
-  //     tap(_ => console.log(`deleted article id=${id}`)),
-  //     catchError(this.handleError<Article>('deleteArticle'))
-  //   );
-  // }
-
-  // deleteLab(id: any): Observable<Labs> {
-
-  //   const url = `${this.baseURL}/api/delete/${id}`;
-  //   return this.http.delete<Labs>(url, httpOptions).pipe(
-      
-  //   )
-  // }
-
-
-
-
-
-
 
 
 

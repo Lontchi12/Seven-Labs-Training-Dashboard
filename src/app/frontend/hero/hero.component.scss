@@ -1,0 +1,131 @@
+
+#footer {
+    padding: 0.5rem;
+}
+
+#users-feed {
+    padding: 4rem 1.5rem;
+}
+
+@media(max-width: 500px) {
+    .reverse-columns {
+        flex-direction: column-reverse;
+        display: flex;
+    }
+}
+
+.titled {
+    font-family: 'Merriweather', serif !important;
+    font-size: 38px !important;
+    font-weight: 900 !important;
+    line-height: 44px !important;
+    // color: #f94144 !important ;
+}
+
+.subtitled {
+    font-family: 'Merriweather', serif !important;
+    font-size: 22px !important;
+    font-weight: 400 !important;
+    line-height: 36px !important;
+    
+}
+
+.text-color{
+    color: black !important;
+}
+.text-color1{
+    color: #277da1 !important;
+}
+.text-color2:hover{
+    background-color: #277da1 ;
+    color: white;
+    
+
+}
+.text-color2{
+    color: #277da1 ;
+    border: 1px solid #277da1;
+
+}
+
+
+
+/* section 2 */
+.section2{
+    background-color: #fff;
+}
+.features {
+    padding: 5rem 0;
+}
+
+.box.cta {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+}
+
+.card-image>.fa {
+    font-size: 8rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: #209cee;
+}
+
+.card-content .content {
+    font-size: 14px;
+    margin: 1rem 1rem;
+}
+
+.card-content .content h4 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.card {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+    margin-bottom: 2rem;
+}
+
+.is-shady {
+    animation: flyintoright .4s backwards;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, .1) 0 1px 0;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 10px;
+    position: relative;
+    transition: all .2s ease-in-out;
+}
+
+.is-shady:hover {
+    box-shadow: 0 10px 16px rgba(0, 0, 0, .13), 0 6px 6px rgba(0, 0, 0, .19);
+}
+
+.section3 {
+    background: rgb(29, 214, 162);
+    height: 1000px;
+}
+
+.change,
+h3,
+h2 {
+    color: white;
+}
+
+.send {
+    background-color: rgb(65, 195, 158);
+}
+
+.section4{
+    background-color: white;
+    height: 400px;
+}
+
+.section5{
+    background-color: #277da1;
+    height: 400px;
+    color: white !important;
+}
+.contact-session{
+    background: white;
+}

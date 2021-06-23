@@ -1,0 +1,53 @@
+<section class="login-container">
+    <div class="logo-box">
+        <p class="logo"><a href="#"  [routerLink]="['/']">Seven Labs</a></p>
+    </div>
+    <div class="login-form-container">
+        <p class="login-form-heading">Login to your account</p>
+        <form action="" class="login-form">
+            <div class="form-group">
+                <input class=" " type="text" [(ngModel)]="userObj.username" placeholder="Type your username" name="username" />
+            </div>
+            <div class="form-group">
+                <input class=" " type="password" [(ngModel)]="userObj.password" placeholder="Type your password" name="password" />
+            </div>
+            <div class="form-group">
+                <input type="submit" (click)="verifyLoginUser()" class="login-form-btn  " value="Login" />
+            </div>
+            <div class="forgot-password-and-signup-links-div mt-2">
+                <p><a href="#">Forgot password?</a></p>
+                <p><a href="#" [routerLink]="['/signup']">Register</a></p>
+            </div>
+        </form>
+    </div>
+    <div class="third-party-signin-options-container mfa mt-2 ">
+        <div class="row">
+            <div class="third-party-signin-item">
+                <img src="../../../assets/images-frontend/images/google-icon.svg" alt="" />
+                <p><a href="">Sigin with Google</a></p>
+            </div>
+            <div class="third-party-signin-item">
+                <img src="../../../assets/images-frontend/images/microsoft.png" alt="" />
+                <p>
+                    <a href=""> Sign in with Microsoft </a>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="third-party-signin-item face">
+                <img src="../../../assets/images-frontend/images/facebook.svg" alt="" />
+                <p><a href="" class="sig">Sign in with Facebook</a></p>
+            </div>
+
+            <div class="third-party-signin-item">
+                <img src="../../../assets/images-frontend/images/twitter.png" alt="" />
+                <p>
+                    <a href="">Sign in with Twitter</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <p class="signup-page-link">
+        Don't have an account?<a routerLink="/register"> Register</a>
+    </p>
+</section>

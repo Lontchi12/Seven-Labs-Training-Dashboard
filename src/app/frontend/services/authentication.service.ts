@@ -21,16 +21,15 @@ export class AuthenticationService {
 
   public createUser(auth: Auth): Observable<Auth> {
     let request = this.httpClient.post<Auth>(`${this.API_SERVER}/auth/signup`, auth,httpOptions);
-    // console.log('From Request' + JSON.stringify(request));
-
+   
     return request;
   }
 
   //login user
 
   public loginUser(auth: Auth): Observable<Auth> {
-    let request = this.httpClient.post<Auth>(`${this.API_SERVER}/auth/signin`, auth,httpOptions);
-    // console.log('From Request' + JSON.stringify(request));
+    let request = this.httpClient.post<Auth>(`${this.API_SERVER}/auth/login`, auth,httpOptions);
+  
 
     return request;
   }

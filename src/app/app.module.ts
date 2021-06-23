@@ -29,8 +29,8 @@ import { LabsComponent } from './containers/labs-container'
 
 import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
-import { LoginComponent } from './views/login/login.component';
-import { RegisterComponent } from './views/register/register.component';
+// import { LoginComponent } from './views/login/login.component';
+// import { RegisterComponent } from './views/register/register.component';
 
 const APP_CONTAINERS = [
   DefaultLayoutComponent
@@ -60,8 +60,11 @@ import { ChartsModule } from 'ng2-charts';
 import { LabContentRoutingModule } from './views/lab-content/lab-content-routing.module';
 import { FooterComponent } from './frontend/footer/footer.component';
 import { HeroComponent } from './frontend/hero/hero.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './frontend/home/home.component';
 import { NavbarComponent } from './frontend/navbar/navbar.component';
+import { LoginComponent } from './frontend/login/login.component';
+import { RegisterComponent } from './frontend/register/register.component';
+
 
 
 
@@ -100,13 +103,15 @@ import { NavbarComponent } from './frontend/navbar/navbar.component';
     ...LAP_CONTAINERS,
     P404Component,
     P500Component,
-    LoginComponent,
-    RegisterComponent,
+    // LoginComponent,
+    // RegisterComponent,
     LabsComponent,
     FooterComponent,
     HeroComponent,
     HomeComponent,
     NavbarComponent,
+    LoginComponent,
+    RegisterComponent
    
     
     

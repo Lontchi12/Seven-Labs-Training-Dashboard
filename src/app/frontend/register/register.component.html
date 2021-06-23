@@ -22,7 +22,7 @@
                 <input type="submit" (click)="addUser()" class="signup-form-btn pb-3" value="Register" />
             </div>
             <div class="forgot-password-and-signup-links-div ">
-                <p><a routerLink="/login">Already have an account? Login</a></p>
+                <p><a  [routerLink]="['/login']">Already have an account? Login</a></p>
             </div>
         </form>
         <div class="terms-and-conditions-links ">

@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   verifyLoginUser(){
     this.authenticationService.loginUser(this.userObj).subscribe(data =>{
-      this.router.navigate(['/'])
+      this.router.navigate(['/dashboard'])
     });
   }
 

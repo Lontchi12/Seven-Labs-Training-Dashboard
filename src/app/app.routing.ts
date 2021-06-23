@@ -13,7 +13,7 @@ import { LabsComponent } from './containers/labs-container'
 import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { from } from 'rxjs';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './frontend/home/home.component';
 import { LoginComponent } from './frontend/login/login.component';
 import { RegisterComponent } from './frontend/register/register.component';
 //import * as path from 'path';
@@ -23,11 +23,7 @@ export const routes: Routes = [
   {path: '' , component: HomeComponent},
   {path: 'login',component: LoginComponent},
   {path: 'signup' ,component: RegisterComponent},
-  // {
-  //   path: '',
-  //   redirectTo: 'dashboard',
-  //   pathMatch: 'full',
-  // },
+
   {
     path: '404',
     component: P404Component,

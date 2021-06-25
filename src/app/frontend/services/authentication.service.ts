@@ -14,8 +14,13 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthenticationService {
+
+  authenticated = false;
+
   // private baseURL = environment.
   API_SERVER = "http://localhost:3000";
+
+  constructor(private httpClient: HttpClient) { }
 
 // register user
 
@@ -27,10 +32,8 @@ export class AuthenticationService {
 
   //login user
 
-  public loginUser(auth: Auth): Observable<Auth> {
+  public loginUser(auth: Auth): Observable<any> {
     let request = this.httpClient.post<Auth>(`${this.API_SERVER}/auth/login`, auth,httpOptions);
-  
-
     return request;
   }
 
@@ -50,7 +53,17 @@ export class AuthenticationService {
     return throwError(
       'Something bad happened; please try again later.');
   }
+
+  set(key: string, value: string) {
+    localStorage.setItem(key, value)
+  }
+  get(key: string) {
+    return localStorage.getItem(key);
+  }
+  remove(key: string) {
+    localStorage.removeItem(key)
+  }
   
   
-  constructor(private httpClient: HttpClient) { }
+  
 }

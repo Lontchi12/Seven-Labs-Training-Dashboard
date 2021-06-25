@@ -16,7 +16,7 @@
                     <a class="a-menu is-size-6 navbar-item"> about </a>
                     <a class="a-menu is-size-6 navbar-item"> features </a>
                     <a class="a-menu is-size-6 navbar-item"> contact </a>
-                    <div class="buttons loginBlock">
+                    <div class="buttons loginBlock" *ngIf="!authenticated" >
                         <a [routerLink]="['/login']" class="a-menu is-size-6 navbar-item button loginButton">Login
               <i class="fa fa-sign-in ico" aria-hidden="true"></i>
             </a>

@@ -18,8 +18,21 @@ export class LoginComponent implements OnInit {
 
   verifyLoginUser(){
     this.authenticationService.loginUser(this.userObj).subscribe(data =>{
+      const { accessToken } = data;
+      this.set('token',accessToken)
+      this.authenticationService.authenticated = true
       this.router.navigate(['/dashboard'])
     });
+  }
+
+  set(key: string, value: string) {
+    localStorage.setItem(key, value)
+  }
+  get(key: string) {
+    return localStorage.getItem(key);
+  }
+  remove(key: string) {
+    localStorage.removeItem(key)
   }
 
 }

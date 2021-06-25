@@ -4,6 +4,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 //import { environment } from 'src/environments/environment';
 import { Observable, throwError } from 'rxjs';
 //import { catchError, retry } from 'rxjs/operators';
+import { LocalStorageService } from './local-storage.service';
 
 
 const httpOptions = {
@@ -33,6 +34,27 @@ export class AuthenticationService {
 
     return request;
   }
+
+  //authenticated user
+
+  // public authenticatedUser(auth: Auth ): Observable<Auth> {
+  //   let request = this.httpClient.post<Auth>(`${this.API_SERVER}/auth/me`, auth,httpOptions);
+  
+
+  //   return request;
+
+  // }
+
+  // logout user
+
+//   logout() {  
+//     localStorage.removeItem('currentUser');  
+//     this.currentUserSubject.next(null);
+// }
+
+
+
+
 
 
   private handleError(error: HttpErrorResponse) {

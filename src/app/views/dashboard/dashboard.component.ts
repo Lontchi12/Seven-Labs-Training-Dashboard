@@ -464,4 +464,9 @@ export class DashboardComponent implements OnInit {
   getProjectsPerLab(id: string): any{
     this.projectsService.getProjects().subscribe(projects => this.projects = projects)
   }
+  deleteProject(project: Projects): void {
+    this.projectsService.deleteProject(project).subscribe(success => {
+      this.getProjects();
+    })
+  }
 }

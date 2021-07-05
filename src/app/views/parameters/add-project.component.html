@@ -6,23 +6,20 @@
           <div class="col-md-12   ">
             <div class="card mx-4 " >
               <div class="card-body p-4">
-                <form (ngSubmit)="onSubmit()" >
+                <!-- <form (ngSubmit)="onSubmit()" > -->
                   <h1>Add Project</h1>
                   
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="icon-user"></i></span>
                     </div>
-                    <input type="text" name="title" [(ngModel)]="title" class="form-control" placeholder="Project Title" autocomplete="lab title" required>
+                    <input type="text" name="title" [(ngModel)]="project.title" class="form-control" placeholder="Project Title" autocomplete="lab title" required>
                   </div>
                   
-                  <div class="mt-4">
-                    <quill-editor class="content-editor" [modules]="quillConfiguration" [placeholder]="'Project Description'"  > </quill-editor>
-                  </div>
-
-                  <div class="mt-4">
-                    <quill-editor class="content-editor" [modules]="quillConfiguration" [placeholder]="'Project Solution'"> </quill-editor>
-                  </div>
+                    <quill-editor class="content-editor" [(ngModel)]="project.description" [modules]="quillConfiguration" [placeholder]="'Project Description'"  > </quill-editor>
+                  
+                    <quill-editor class="content-editor" [(ngModel)]="project.solution" [modules]="quillConfiguration" [placeholder]="'Project Solution'"> </quill-editor>
+                 
                   
 
                   <!-- <div class="input-group mb-3">
@@ -34,15 +31,11 @@
                   </div> -->
 
 
-                 
-                  
-                  
-                  
-                </form>
+                <!-- </form> -->
               </div>
               <div class="card-footer p-4">
                 <div class="row">
-                    <button type="button" class="btn btn-block btn-success">Add Project</button>
+                    <button type="button" class="btn btn-block btn-success" (click)= "save()">Add Project</button>
                   
                 </div>
               </div>

@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import {Auth} from '../models/Auth';
+import { Auth } from '../models/Auth';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 //import { environment } from 'src/environments/environment';
-import { Observable, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
 //import { catchError, retry } from 'rxjs/operators';
 import { LocalStorageService } from './local-storage.service';
+import { Role } from '../models/Role';
 
 
 const httpOptions = {
@@ -21,7 +22,48 @@ export class AuthenticationService {
   // private baseURL = environment.
   API_SERVER = "http://localhost:3000";
 
-  constructor(private httpClient: HttpClient) { }
+  private userSubject: BehaviorSubject<Auth>;
+  public user: Observable<Auth>;
+
+  constructor(private httpClient: HttpClient) {
+    this.userSubject = new BehaviorSubject<Auth>(JSON.parse(JSON.stringify(
+      localStorage.getItem('user'))));
+    this.user = this.userSubject.asObservable();
+   }
+
+   public get userValue(): Auth {
+    return this.userSubject.value;
+}
+
+getAll() {
+  return this.httpClient.get<Auth[]>(`${this.API_SERVER}/auth/users`);
+}
+
+getById(id: string): Observable<any> {
+  return this.httpClient.get<Auth>(`${this.API_SERVER}/auth/user/${id}`);
+}
+
+// getLab(id: string): Observable<any> {
+//   const url = `${this.baseURL}/api/lab/${id}`;
+//   return this.http.get<Labs>(url);
+// }
+
+getAuthUser(): Auth|any{
+  return this.get('user');
+}
+
+setUserRole(role): Auth|any{
+  return this.set('user_role', role);
+}
+
+getUserRole(): string{
+  return this.get('user_role');
+}
+
+setAuthUser(user): Auth|any{
+  return this.set('user', user);
+}
+
 
 // register user
 
@@ -38,23 +80,7 @@ export class AuthenticationService {
     return request;
   }
 
-  //authenticated user
-
-  // public authenticatedUser(auth: Auth ): Observable<Auth> {
-  //   let request = this.httpClient.post<Auth>(`${this.API_SERVER}/auth/me`, auth,httpOptions);
   
-
-  //   return request;
-
-  // }
-
-  // logout user
-
-//   logout() {  
-//     localStorage.removeItem('currentUser');  
-//     this.currentUserSubject.next(null);
-// }
-
 
 
 

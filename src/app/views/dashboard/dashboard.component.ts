@@ -6,6 +6,11 @@ import { ActivatedRoute } from '@angular/router';
 import { Labs } from '../../models/Labs';
 import { LabsService } from '../../services/labs.service';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
+import { Role } from '../../frontend/models/Role';
+import { AuthenticationService } from '../../frontend/services/authentication.service';
+import { Projects } from '../../models/Projects';
+import { ProjectsService } from '../../services/projects.service';
 
 @Component({
   templateUrl: 'dashboard.component.html'
@@ -14,11 +19,36 @@ export class DashboardComponent implements OnInit {
 
   labs: Labs[] = [];
 
+  projects: Projects[] = []
 
-  @Input() lab: Labs;
+
+  
+  user: any;
+  role: string;
 
 
-  constructor(private route: ActivatedRoute, private labsService: LabsService, private location: Location) { }
+  constructor(private route: ActivatedRoute, 
+    private labsService: LabsService, 
+    private location: Location, 
+    private router: Router,
+    private authenticationService: AuthenticationService,
+    private projectsService: ProjectsService
+
+    ) { 
+      
+    }
+
+   
+
+    get isAdmin() {
+     const admin =   this.user && this.role == Role.ADMIN;
+  
+     console.log(this.user);
+     
+     console.log(' Is Admin ' + admin + ' The role is ' + this.role)
+     return admin
+
+    }
 
   radioModel: string = 'Month';
 
@@ -391,6 +421,9 @@ export class DashboardComponent implements OnInit {
   } 
 
   ngOnInit(): void {
+    this.user = this.authenticationService.getAuthUser();
+    this.role = this.authenticationService.getUserRole();    
+    
     // generate random values for mainChart
     for (let i = 0; i <= this.mainChartElements; i++) {
       this.mainChartData1.push(this.random(50, 200));
@@ -399,7 +432,12 @@ export class DashboardComponent implements OnInit {
     }
 
     this.getLabs();
+    this.getProjects();
   
+  }
+  
+  getAll() {
+    this.authenticationService.getAll().subscribe(users => this.user = users)
   }
 
   
@@ -407,12 +445,10 @@ export class DashboardComponent implements OnInit {
     // const trying = this.labs.forEach(labs => {
     //   this.labs
     //   console.log(trying)
-      
     // });
 
     this.labsService.getLabs().subscribe(labs => this.labs = labs)
-    
-
+  
   }
 
   delete(lab: Labs): void {
@@ -420,5 +456,12 @@ export class DashboardComponent implements OnInit {
       this.getLabs();
     })
   }
+
+  getProjects(): void {
+    this.projectsService.getProjects().subscribe(projects => this.projects = projects)
+  }
   
+  getProjectsPerLab(id: string): any{
+    this.projectsService.getProjects().subscribe(projects => this.projects = projects)
+  }
 }

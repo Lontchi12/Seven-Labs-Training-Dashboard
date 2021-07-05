@@ -15,7 +15,7 @@ export class AddLabComponent implements OnInit {
   
   @Input() lab: Labs = { title: '', description: '' }
 
-  sampleRichText: string = `<h1>this is a heading</h1><br/>2<sup>2</sup>&nbsp;=&nbsp;<strong>4</strong>`
+  //sampleRichText: string = `<h1>this is a heading</h1><br/>2<sup>2</sup>&nbsp;=&nbsp;<strong>4</strong>`
 
 
 

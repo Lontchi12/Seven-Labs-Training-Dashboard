@@ -12,13 +12,13 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="icon-user"></i></span>
                     </div>
-                    <input type="text" name="title" [(ngModel)]= "lab.title" ngModel class="form-control" placeholder="Lab Title" autocomplete="lab title" required>
+                    <input type="text" name="title" [(ngModel)]= "lab.title" class="form-control" placeholder="Lab Title" autocomplete="lab title" required>
                   </div>
                   <!-- <div class="input-group mb-3 "> -->
                     
                     
 
-                    <quill-editor class="content-editor" [modules]="quillConfiguration" [(ngModel)]="lab.description" ngModel [placeholder]="'Lab Description'"> </quill-editor>
+                    <quill-editor class="content-editor" [modules]="quillConfiguration" [(ngModel)]="lab.description"  [placeholder]="'Lab Description'"> </quill-editor>
                   <!-- </div> -->
   
                   

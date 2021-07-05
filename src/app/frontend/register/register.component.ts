@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  @Input() userObj = { username: '', password: ''}
+  @Input() userObj = { username: '', password: '',email: ''}
 
   addUser(){
     this.authenticationService.createUser(this.userObj).subscribe(data =>{

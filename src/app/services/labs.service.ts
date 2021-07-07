@@ -23,9 +23,7 @@ export class LabsService {
   
   /** GET All Labs */
   getLabs(): Observable<Labs[]> {
-    const result = this.http.get<Labs[]>(this.baseURL + '/api/labs');
-    console.log(result)
-    return result;
+    return this.http.get<Labs[]>(this.baseURL + '/api/labs');
   }
   
 

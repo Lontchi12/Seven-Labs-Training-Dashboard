@@ -1,5 +1,6 @@
 import { Auth } from './../../frontend/models/Auth';
-import { LocalStorageService } from './../../frontend/local-storage.service';
+//import { LocalStorageService } from './../../frontend/local-storage.service';
+import { LocalStorageService } from '../../frontend/services/local-storage.service';
 import { AuthenticationService } from './../../frontend/services/authentication.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import {Component} from '@angular/core';
@@ -28,10 +29,10 @@ export class DefaultLayoutComponent {
 
   message = '' 
 
-  //authenticated = this.loginService.authenticated;
+  
   authenticated = this.authenticationService.authenticated
 
-  API_SERVER = "http://localhost:3000";
+  API_SERVER = "https://seven-labs-backend.herokuapp.com";
 
   ngOnInit(): void {
     

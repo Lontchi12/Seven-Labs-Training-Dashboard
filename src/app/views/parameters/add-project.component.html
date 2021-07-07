@@ -9,7 +9,7 @@
                 <!-- <form (ngSubmit)="onSubmit()" > -->
                   <h1>Add Project</h1>
                   
-                  <div class="input-group mb-3">
+                  <div class="input-group mb-3" >
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="icon-user"></i></span>
                     </div>
@@ -19,6 +19,15 @@
                     <quill-editor class="content-editor" [(ngModel)]="project.description" [modules]="quillConfiguration" [placeholder]="'Project Description'"  > </quill-editor>
                   
                     <quill-editor class="content-editor" [(ngModel)]="project.solution" [modules]="quillConfiguration" [placeholder]="'Project Solution'"> </quill-editor>
+
+                  <select name="labId" id="labId" class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="icon-user"></i></span>
+                    </div>
+                    <div *ngFor="let lab of labs">
+                      <option value="lab.id">{{ lab.title }}</option>
+                    </div>
+                  </select>
                  
                   
 

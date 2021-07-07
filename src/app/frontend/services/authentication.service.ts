@@ -20,7 +20,7 @@ export class AuthenticationService {
   authenticated = false;
 
   // private baseURL = environment.
-  API_SERVER = "http://localhost:3000";
+  API_SERVER = "https://seven-labs-backend.herokuapp.com";
 
   private userSubject: BehaviorSubject<Auth>;
   public user: Observable<Auth>;

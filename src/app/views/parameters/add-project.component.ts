@@ -1,9 +1,11 @@
+import { Labs } from './../../models/Labs';
 
 import { Component, Input, OnInit } from '@angular/core';
 import { Projects } from '../../models/Projects';
 import { ProjectsService } from './../../services/projects.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { LabsService } from '../../services/labs.service';
 
 
 @Component({
@@ -14,10 +16,19 @@ import { Location } from '@angular/common';
 export class AddProjectComponent implements OnInit {
 
   @Input() project: Projects = { title: '', description: '', solution: ''}
+  @Input() labs : Labs[];
 
-  constructor(private projectsService: ProjectsService, private location: Location) { }
+  constructor(private projectsService: ProjectsService, 
+    private location: Location, 
+    private labsService: LabsService) { }
 
   ngOnInit(): void {
+   this.labsService.getLabs()
+   .subscribe( lab => {
+      console.log(lab);
+      this.labs = lab
+    })
+   console.log(`Labs comming from request are ${this.labs}`);
   }
 
   

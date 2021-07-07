@@ -24,12 +24,8 @@ export class EditLabComponent implements OnInit {
 
   constructor(private labsService: LabsService, 
     private route: ActivatedRoute, 
-    private location: Location,
-   
-    
-    ) { 
-      
-    }
+    private location: Location
+    ) {}
 
   ngOnInit(): void {
     
@@ -39,10 +35,8 @@ export class EditLabComponent implements OnInit {
  
   getLab(): void {
     const _id =  this.route.snapshot.paramMap.get('id');
-    console.log(_id)
     this.labsService.getLab(_id)
     .subscribe( lab => this.lab = lab)
-
   }
 
   

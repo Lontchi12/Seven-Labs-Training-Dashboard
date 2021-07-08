@@ -48,7 +48,7 @@
   
   "scripts": {
 
-    "heroku-postbuild": "ng build --prod",
+  "heroku-postbuild": "ng build --configuration production",
   
     
   "ng": "ng",

@@ -1,24 +1,41 @@
 
-<div class="animated fadeIn">
+<div class="animated fadeIn"  >
   
-  
-
-  <div class="row ">
+  <div class="row " *ngIf="user" >
     <div class="col-sm-6 col-lg-6"  *ngFor="let lab of labs">
-      <div class="card">
+      <div class="card"   >
         <div class="card-header"><h4>{{ lab.title }} </h4></div>
         <div class="card-body">
-          <h5 class="card-title">Description</h5>  
-          <div [innerHtml]= "lab.description" class="card-text">
-           
+          <h5 class="card-title">Description</h5>
+          <div [innerHtml]= "lab.description" class="card-text"> <hr>
+          </div>
+          
+          <div *ngFor="let project of projects">
+            <div class="card" >
+              
+                <div class="card-header"> {{ project.title }}</div>
+                <div class="card-body">
+                <div class="card-text" [innerHtml]= "project.description"> 
+                </div><hr>
+                <div class="card-text" [innerHtml]= "project.solution"></div> 
+              </div>
+              <div class="card-footer" >
+                <div class="row"  >
+                  
+                  <a  *ngIf="isAdmin"  routerLinkActive="router-link-active" (click)="deleteProject(project)"  class="btn btn-danger ml-2" style="color: #fff;">Delete</a>
+                  
+                </div>
+              </div>
+            </div> 
           </div>
         </div>
-        <div class="card-footer">
-          <div class="row">
-            <a href="#" [routerLink]="['/labs']" routerLinkActive="router-link-active"  class="btn btn-primary">View</a>
-            <a href="#" [routerLink]="['/parameters/edit-lab', lab._id ]" routerLinkActive="router-link-active"  class="btn btn-success ml-2">Update</a>
-            <a href="#" routerLinkActive="router-link-active" (click)="delete(lab)"  class="btn btn-danger ml-2">Delete</a>
-            
+
+        <div class="card-footer" >
+          <div class="row"  >
+            <a href="" [routerLink]="['/labs']" routerLinkActive="router-link-active"  class="btn btn-primary">View</a>
+            <a *ngIf="isAdmin" href="#" [routerLink]="['/parameters/edit-lab', lab._id ]" routerLinkActive="router-link-active"  class="btn btn-success ml-2">Update</a>
+            <a  *ngIf="isAdmin"  routerLinkActive="router-link-active" (click)="delete(lab)"  class="btn btn-danger ml-2" style="color: #fff;">Delete</a>
+            <a  *ngIf="isAdmin"  [routerLink]="['/parameters/add-project']" routerLinkActive="router-link-active"  class="btn btn-info ml-2" style="color: #fff;">Add Project</a>
           </div>
         </div>
       </div>

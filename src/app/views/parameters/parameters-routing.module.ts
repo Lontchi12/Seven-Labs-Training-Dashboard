@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SettingsComponent } from './settings.component';
 import { RouterModule, Routes } from '@angular/router';
+import { Role } from '../../frontend/models/Role';
 
 
 const routes: Routes = [
@@ -43,7 +44,8 @@ const routes: Routes = [
         path: 'edit-lab/:id',
         component: EditLabComponent,
         data: {
-          title: 'Update Lab'
+          title: 'Update Lab',
+          // roles: [Role.ADMIN]
         }
       }
      

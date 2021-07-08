@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Labs } from '../models/Labs';
 import { environment } from '../../environments/environment';
 import { Observable, of } from 'rxjs';
+import { Router } from '@angular/router';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -17,14 +18,12 @@ export class LabsService {
   
   private baseURL = environment.baseURL
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   
   /** GET All Labs */
   getLabs(): Observable<Labs[]> {
-    const result = this.http.get<Labs[]>(this.baseURL + '/api/labs');
-    console.log(result)
-    return result;
+    return this.http.get<Labs[]>(this.baseURL + '/api/labs');
   }
   
 
@@ -58,6 +57,7 @@ export class LabsService {
       return this.http.delete(url, httpOptions);
     }
     return of({});
+    //this.router.navigate(['/dashboard'])
   }
 
 

@@ -1,23 +1,26 @@
+
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-
 import { IconSetService } from '@coreui/icons-angular';
 import { freeSet } from '@coreui/icons';
 
 @Component({
   // tslint:disable-next-line
   
-  
-
   selector: 'body',
   template: '<div><router-outlet></router-outlet></div>',
   providers: [IconSetService],
 })
 export class AppComponent implements OnInit {
+
+  
+
   constructor(
     private router: Router,
+   
     public iconSet: IconSetService
   ) {
+    
     // iconSet singleton
     iconSet.icons = { ...freeSet };
   }
@@ -30,4 +33,7 @@ export class AppComponent implements OnInit {
       window.scrollTo(0, 0);
     });
   }
+
+  
+
 }

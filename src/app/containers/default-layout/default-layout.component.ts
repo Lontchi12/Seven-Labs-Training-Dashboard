@@ -1,35 +1,50 @@
-import { LocalStorageService } from './../../frontend/local-storage.service';
+import { Auth } from './../../frontend/models/Auth';
+//import { LocalStorageService } from './../../frontend/local-storage.service';
+import { LocalStorageService } from '../../frontend/services/local-storage.service';
 import { AuthenticationService } from './../../frontend/services/authentication.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import {Component} from '@angular/core';
 import { navItems } from '../../_nav';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Emitters } from '../../frontend/emitters/emitters';
+
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './default-layout.component.html'
 })
 export class DefaultLayoutComponent {
+ 
+  user: Auth
+  
+  
 
   constructor (private router: Router, private http: HttpClient, 
     private authenticationService: AuthenticationService,
-    private localStorageService: LocalStorageService   ) {}
+    private localStorageService: LocalStorageService ,
+    private route: ActivatedRoute,   ) {
+
+      
+    }
 
   message = '' 
 
-  //authenticated = this.loginService.authenticated;
+  
   authenticated = this.authenticationService.authenticated
 
-  API_SERVER = "http://localhost:3000";
+  API_SERVER = "https://seven-labs-backend.herokuapp.com";
 
   ngOnInit(): void {
+    
+
+
+    this.user = this.authenticationService.getAuthUser();
     Emitters.authEmitter.subscribe(
       (auth: boolean) => {
         this.authenticated = this.authenticationService.authenticated 
       } 
     )
-
+   
     const token = this.localStorageService.getItem('token');
     const headers_object = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -54,6 +69,19 @@ export class DefaultLayoutComponent {
       }
     )
   }
+
+  // getLab(): void {
+  //   const _id =  this.route.snapshot.paramMap.get('id');
+  //   console.log(_id)
+  //   this.labsService.getLab(_id)
+  //   .subscribe( lab => this.lab = lab)
+
+  // }
+
+  // getAll(): void {
+  //   const _id = this.route.snapshot.paramMap.get('id');
+  //   this.authenticationService.getById(_id).subscribe(user => this.user = user)
+  // }
 
   logout(){
     this.localStorageService.removeItem('token');

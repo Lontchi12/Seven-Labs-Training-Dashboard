@@ -49,9 +49,6 @@
   "scripts": {
   
     
-  
-  
-    
   "ng": "ng",
   
     
@@ -61,7 +58,7 @@
   "start": "node server.js",
   
     
-  "build": "ng build --configuration production --aot --build-optimizer --common-chunk --vendor-chunk --optimization --progress",
+  "build": "ng build --prod --aot --build-optimizer --common-chunk --vendor-chunk --optimization --progress",
   
     
   "test": "ng test",

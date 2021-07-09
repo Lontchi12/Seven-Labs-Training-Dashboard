@@ -47,8 +47,6 @@
   "license": "MIT",
   
   "scripts": {
-
-  
   
     
   "ng": "ng",
@@ -59,8 +57,10 @@
     
   "start": "node server.js",
   
+  "heroku-postbuild": "ng build --aot --configuration production",
+  
     
-  "build": "ng build --configuration production --aot --build-optimizer --common-chunk --vendor-chunk --optimization=false --progress",
+  "build": " --configuration production --aot --build-optimizer --common-chunk --vendor-chunk --optimization=false --progress",
   
     
   "test": "ng test",
@@ -154,6 +154,9 @@
   
     
   "classlist.js": "^1.1.20150312",
+  
+    
+  "compression": "^1.7.4",
   
     
   "core-js": "^3.9.1",

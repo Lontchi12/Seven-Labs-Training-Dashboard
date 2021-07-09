@@ -53,6 +53,7 @@
     "chart.js": "^2.9.4",
     "ckeditor5-code-snippet-plugin": "^1.0.7",
     "classlist.js": "^1.1.20150312",
+    "compression": "^1.7.4",
     "core-js": "^3.9.1",
     "express": "^4.17.1",
     "flag-icon-css": "^3.5.0",

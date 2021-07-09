@@ -60,7 +60,7 @@
   "heroku-postbuild": "ng build --aot --configuration production",
   
     
-  "build": "ng build --configuration production --aot --build-optimizer --common-chunk --vendor-chunk --optimization=false --progress",
+  
   
     
   "test": "ng test",

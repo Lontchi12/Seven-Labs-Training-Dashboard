@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Projects } from '../models/Projects';
-import { environment } from '../../environments/environment';
+// import { environment } from '../../environments/environment';
 import { Observable, of } from 'rxjs';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment.prod';
 
 
 const httpOptions = {

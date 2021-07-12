@@ -16,9 +16,9 @@
                     <input type="text" name="title" [(ngModel)]="project.title" class="form-control" placeholder="Project Title" autocomplete="lab title" required>
                   </div>
                   
-                    <quill-editor class="content-editor" [(ngModel)]="project.description" [modules]="quillConfiguration" [placeholder]="'Project Description'"  > </quill-editor>
+                    <quill-editor class="content-editor" [(ngModel)]="project.description"  [placeholder]="'Project Description'"  > </quill-editor>
                   
-                    <quill-editor class="content-editor" [(ngModel)]="project.solution" [modules]="quillConfiguration" [placeholder]="'Project Solution'"> </quill-editor>
+                    <quill-editor class="content-editor" [(ngModel)]="project.solution"  [placeholder]="'Project Solution'"> </quill-editor>
 
                   <select name="labId" id="labId" class="input-group mb-3">
                     <div class="input-group-prepend">

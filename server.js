@@ -2,24 +2,39 @@
 const compression = require('compression');
 const express = require('express');
 const path = require('path');
+//const csp = require('express-csp-header');
 
 const app = express();
 
 //Gzip
 app.use(compression())
 
+// app.use(csp({
+//   policies: {
+//       'default-src': [csp.NONE],
+//       'img-src': [csp.SELF],
+//   }
+// }));
+
+const { expressCspHeader, INLINE, NONE, SELF } = require('express-csp-header');
+
+app.use(expressCspHeader({
+    policies: {
+        'default-src': [NONE],
+        'script-src': [SELF, INLINE, 'somehost.com'],
+        'style-src': [SELF, 'mystyles.net'],
+        'img-src': [SELF],
+        'worker-src': [NONE],
+        'block-all-mixed-content': true
+    }
+}));
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/index.html'));
 
 // res.header('Content-Security-Policy', 'img-src 'self'');
 
-const csp = require('express-csp-header');
-app.use(csp({
-    policies: {
-        'default-src': [csp.NONE],
-        'img-src': [csp.SELF],
-    }
-}));
+
+
 
 // app.get('*', function(req,res) {
     

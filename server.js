@@ -9,15 +9,6 @@ const app = express();
 //Gzip
 app.use(compression())
 
-// app.use(csp({
-//   policies: {
-//       'default-src': [csp.NONE],
-//       'img-src': [csp.SELF],
-//   }
-// }));
-
-
-
 app.use(expressCspHeader({
     policies: {
         'default-src': [NONE],
@@ -32,14 +23,6 @@ app.use(expressCspHeader({
 // app.use(express.static(__dirname + '/dist/index.html'));
 
 // res.header('Content-Security-Policy', 'img-src 'self'');
-
-
-
-
-// app.get('*', function(req,res) {
-    
-// res.sendFile(path.join(__dirname+'/dist/index.html'));
-// });
 
 app.use(express.static(path.join(__dirname, '/dist/')));
 

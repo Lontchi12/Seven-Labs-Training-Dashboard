@@ -24,7 +24,7 @@ app.use(expressCspHeader({
 
 // res.header('Content-Security-Policy', 'img-src 'self'');
 
-app.use(express.static(path.join(__dirname, 'dist/')));
+app.use(express.static(path.join(__dirname, '/dist/')));
 
 app.get('*', (req, res) => {
   res.sendFile(

@@ -21,7 +21,7 @@
     "ng": "ng",
     "postinstall": "ngcc --properties es2015 browser module main --first-only  n",
     "start": "node server.js",
-    "build": " --configuration production ",
+    "build": " production ",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

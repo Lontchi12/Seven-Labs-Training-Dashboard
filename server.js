@@ -2,7 +2,7 @@
 const compression = require('compression');
 const express = require('express');
 const path = require('path');
-//const csp = require('express-csp-header');
+const { expressCspHeader, INLINE, NONE, SELF } = require('express-csp-header');
 
 const app = express();
 
@@ -16,7 +16,7 @@ app.use(compression())
 //   }
 // }));
 
-const { expressCspHeader, INLINE, NONE, SELF } = require('express-csp-header');
+
 
 app.use(expressCspHeader({
     policies: {
@@ -29,7 +29,7 @@ app.use(expressCspHeader({
     }
 }));
 // Serve only the static files form the dist directory
-app.use(express.static(__dirname + '/dist/index.html'));
+// app.use(express.static(__dirname + '/dist/index.html'));
 
 // res.header('Content-Security-Policy', 'img-src 'self'');
 
@@ -45,7 +45,7 @@ app.use(express.static(path.join(__dirname, '/dist/')));
 
 app.get('*', (req, res) => {
   res.sendFile(
-    path.resolve(__dirname+'/dist/index.html')
+    path.resolve(__dirname, 'dist', 'index.html')
   );
 });
 
